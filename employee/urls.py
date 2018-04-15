@@ -9,7 +9,7 @@ urlpatterns = [
     url(r'^created/$', employee_created, name='created'),
     url(r'^updated/$', employee_updated, name='updated'),
     url(r'^update-info/$', update_info, name='update-info'),
-    url(r'', main_page, name='main-page'),
-    url(r'^update', update_employee, name='update'),
+    url(r'index/$', main_page, name='main-page'),
+    url(r'^update/$', update_employee, name='update'),
 
 ]
