@@ -1,0 +1,18 @@
+{% extends 'html/base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-md-12 text-center">
+        <h3>Select Operation</h3>
+    </div>
+</div>
+<hr>
+<form action="{% url 'create-employee' %}" method="post">{% csrf_token %}
+    <button type="submit" class="btn btn-primary col-md-12">Add Employee</button>
+</form>
+<form action="{% url 'update-info' %}" method="post">{% csrf_token %}
+    <button type="submit" class="btn btn-primary col-md-12">Update Employee</button>
+</form>
+<form action="{% url 'list-employee' %}" method="get">{% csrf_token %}
+    <button type="submit" class="btn btn-primary col-md-12">View Employees</button>
+</form>
+{% endblock %}

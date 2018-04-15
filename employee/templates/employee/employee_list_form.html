@@ -1,0 +1,26 @@
+{% extends 'html/base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-md-12 text-center">
+        <h3>List Employee(s)</h3>
+    </div>
+</div>
+<hr>
+<form action="{% url 'main-page' %}" method="post">{% csrf_token %}
+    {% for employee in employees_object %}
+        <b>Username:</b><br>{{ employee.user }} <br>
+        <b>Identity Number:</b><br>{{ employee.id_number }} <br>
+        <b>Phone Number:</b><br>{{ employee.phone_number }} <br>
+        <b>Physical Address:</b><br>{{ employee.physical_address }} <br>
+        <b>Tax Number:</b><br>{{ employee.tax_number }} <br>
+        <b>Email:</b><br>{{ employee.email }} <br>
+        <b>Personal Email:</b><br>{{ employee.personal_email }} <br>
+        <b>Github Username:</b><br>{{ employee.github_user }} <br>
+        <b>Birth Date:</b><br>{{ employee.birth_date }} <br>
+        <b>Start Date:</b><br>{{ employee.start_date }} <br>
+        <b>Gender:</b><br>{{ employee.gender }} <br>
+        <b>Race:</b><br>{{ employee.race }} <br><hr>
+    {% endfor %}
+    <button type="submit" class="btn btn-primary col-md-12">Home</button>
+</form>
+{% endblock %}

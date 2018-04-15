@@ -1,0 +1,12 @@
+{% extends 'html/base.html' %}
+{% block content %}
+<form action="{% url 'main-page' %}" method="post">{% csrf_token %}
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h6>Employee Successfully Created</h6>
+        </div>
+    </div>
+    <hr>
+    <button type="submit" class="btn btn-primary col-md-12">Home</button>
+</form>
+{% endblock %}

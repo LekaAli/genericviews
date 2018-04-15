@@ -1,0 +1,17 @@
+{% extends 'html/base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-md-12 text-center">
+        <h3>Search Employee</h3>
+        <h6 style="color: red">{{ message }}</h6>
+    </div>
+</div>
+<hr>
+<form action="{% url 'update' %}" method="post">{% csrf_token %}
+    <input type="text" class="form-control" name="employee_id" value="{{ id }}" placeholder="Employee Id"><hr>
+    <button type="submit" class="btn btn-primary col-md-12">Search Employee</button>
+</form>
+<form action="{% url 'main-page' %}" method="get">{% csrf_token %}
+    <button type="submit" class="btn btn-primary col-md-12">Back</button>
+</form>
+{% endblock %}
