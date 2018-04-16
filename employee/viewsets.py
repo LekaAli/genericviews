@@ -27,18 +27,22 @@ GENDER_OPTIONS = (
 
 
 class EmployeeCreateForm(forms.ModelForm):
-    user = forms.ModelChoiceField(queryset=User.objects.all(), widget=forms.Select(attrs={'class': 'form-control col-md-12'}))
+    user = forms.ModelChoiceField(
+        queryset=User.objects.all(), widget=forms.Select(attrs={'class': 'form-control col-md-12'}))
     id_number = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control col-md-12'}))
     phone_number = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control col-md-12'}))
     tax_number = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control col-md-12'}))
     email = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control col-md-12'}))
     personal_email = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control col-md-12'}))
     github_user = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control col-md-12'}))
-    physical_address = forms.CharField(widget=forms.Textarea(attrs={'cols': 30, 'rows': 5, 'class': 'form-control col-md-12'}))
+    physical_address = forms.CharField(
+        widget=forms.Textarea(attrs={'cols': 30, 'rows': 5, 'class': 'form-control col-md-12'}))
     gender = forms.CharField(widget=forms.Select(choices=GENDER_OPTIONS, attrs={'class': 'form-control col-md-12'}))
     race = forms.CharField(widget=forms.Select(choices=RACE_OPTIONS, attrs={'class': 'form-control col-md-12'}))
-    birth_date = forms.DateField(widget=extras.SelectDateWidget(years=YEAR_OF_BIRTH, attrs={'class': 'form-control col-md-12'}))
-    start_date = forms.DateField(widget=extras.SelectDateWidget(years=START_YEAR, attrs={'class': 'form-control col-md-12'}))
+    birth_date = forms.DateField(
+        widget=extras.SelectDateWidget(years=YEAR_OF_BIRTH, attrs={'class': 'form-control col-md-12'}))
+    start_date = forms.DateField(
+        widget=extras.SelectDateWidget(years=START_YEAR, attrs={'class': 'form-control col-md-12'}))
 
     class Meta:
         model = Employee
@@ -68,18 +72,22 @@ class EmployeeListViewSet(ListView):
 
 
 class EmployeeUpdateForm(forms.ModelForm):
-    user = forms.ModelChoiceField(queryset=User.objects.all(), widget=forms.Select(attrs={'class': 'form-control col-md-12'}))
+    user = forms.ModelChoiceField(queryset=User.objects.all(), widget=forms.Select(
+        attrs={'class': 'form-control col-md-12'}))
     id_number = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control col-md-12'}))
     phone_number = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control col-md-12'}))
     tax_number = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control col-md-12'}))
     email = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control col-md-12'}))
     personal_email = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control col-md-12'}))
     github_user = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control col-md-12'}))
-    physical_address = forms.CharField(widget=forms.Textarea(attrs={'cols': 30, 'rows': 5, 'class': 'form-control col-md-12'}))
+    physical_address = forms.CharField(
+        widget=forms.Textarea(attrs={'cols': 30, 'rows': 5, 'class': 'form-control col-md-12'}))
     gender = forms.CharField(widget=forms.Select(choices=GENDER_OPTIONS, attrs={'class': 'form-control col-md-12'}))
     race = forms.CharField(widget=forms.Select(choices=RACE_OPTIONS, attrs={'class': 'form-control col-md-12'}))
-    birth_date = forms.DateField(widget=extras.SelectDateWidget(years=YEAR_OF_BIRTH, attrs={'class': 'form-control col-md-12'}))
-    start_date = forms.DateField(widget=extras.SelectDateWidget(years=START_YEAR, attrs={'class': 'form-control col-md-12'}))
+    birth_date = forms.DateField(
+        widget=extras.SelectDateWidget(years=YEAR_OF_BIRTH, attrs={'class': 'form-control col-md-12'}))
+    start_date = forms.DateField(
+        widget=extras.SelectDateWidget(years=START_YEAR, attrs={'class': 'form-control col-md-12'}))
 
     class Meta:
         model = Employee
